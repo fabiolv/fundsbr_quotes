@@ -1,0 +1,6 @@
+FLASK_APP=br_funds_quotes
+FLASK_ENV=development
+THREADED=True
+THREADED=TRUE
+
+JSON_SORT_KEYS=False
