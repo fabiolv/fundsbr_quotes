@@ -1,8 +1,7 @@
 from http import HTTPStatus
-import re
 from urllib.request import Request
 from flask import Blueprint, Response, request, jsonify
-from .quotes import get_latest_quote, quote_test, load_quotes
+from .quotes import get_latest_quote, load_quotes
 
 funds_quotes_blueprint = Blueprint('funds_quotes_blueprint', __name__)
 
@@ -17,16 +16,17 @@ def quotes_get():
 
 def quotes_post(request: Request) -> Response:
     '''
-    Loads the quote data for the funds in the request for the period given.
-    POST requests are expected to pass a payload in the format below:
-    {
-        "period": "202203",
-        "cnpjs": [
-            "26.673.556/0001-32",
-            "21.917.184/0001-02",
-            "22.041.150/0001-86"
-        ]
-    }
+        Loads the quote data for the funds in the request for the period given.
+        POST requests are expected to pass a payload in the format below:
+
+        {
+            "period": "202203",
+            "cnpjs": [
+                "26.673.556/0001-32",
+                "21.917.184/0001-02",
+                "22.041.150/0001-86"
+            ]
+        }
     '''
     print(request.get_json())
 
