@@ -90,6 +90,9 @@ def get_quotes(cnpj: str, from_date: str='1900-01-01', to_date: str='9999-12-31'
     return results
 
 def get_latest_quote(cnpj: str) -> Response:
+    '''
+        Gets the latest quote for a given fund
+    '''
     # Check if the CNPJ is valid
     try:
         cnpj = validate_cnpj([cnpj])[0]

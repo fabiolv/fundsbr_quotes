@@ -8,12 +8,7 @@ funds_quotes_blueprint = Blueprint('funds_quotes_blueprint', __name__)
 
 @funds_quotes_blueprint.route('/quotes/<cnpj>/', methods=['GET'])
 def route_quotes_get(cnpj: str) -> Response:
-    #TODO: make it do something, like return the all/latest quotes for the fund
     return get_latest_quote(cnpj)
-
-    return jsonify({
-        'msg': '¯\_(ツ)_/¯'
-    })
 
 def quotes_get():
     return jsonify({

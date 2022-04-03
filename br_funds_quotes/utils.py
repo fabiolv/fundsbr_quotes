@@ -43,9 +43,4 @@ def funds_exist(list_of_funds: List, existing_funds: List) -> List:
 
 
 if __name__ == '__main__':
-    # print(ascii_letters)
-    # l = validate_cnpj(['21.917.184/0001-29', '21.917.206/0001-50', '42.730.627/0001-48', '11222333444455'])
-    # add_funds(['11222333444455'])
-    # print(l)
-    # validate_cnpj([''])
     pass
