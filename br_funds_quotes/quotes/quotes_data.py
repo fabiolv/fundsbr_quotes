@@ -5,6 +5,7 @@ class DataLoadError(Exception):
     def __init__(self, msg):
         super().__init__(msg)
 
+
 def load_quotes_data(period: str) -> pd.DataFrame:
     ''' 
         Loads the quote information for a given period (YYYYMM) from CVM.
@@ -12,7 +13,7 @@ def load_quotes_data(period: str) -> pd.DataFrame:
         RETURNS
         pd.DataFrame
     '''
-    filename = f'inf_diario_fi_{period}.csv'
+    filename = f'inf_diario_fi_{period}.zip'
     url = f'http://dados.cvm.gov.br/dados/FI/DOC/INF_DIARIO/DADOS/{filename}'
     # url = 'inf_diario_fi_202202.csv'
     cols = [
@@ -26,7 +27,7 @@ def load_quotes_data(period: str) -> pd.DataFrame:
     ]
     try:
         print(f'--> Loading quotes data from file {url}')
-        funds_quotes = pd.read_csv(url, delimiter=';', encoding='ISO-8859-1', dtype='str', usecols=cols)
+        funds_quotes = pd.read_csv(url, delimiter=';', encoding='ISO-8859-1', dtype='str', usecols=cols, compression='zip')
         return funds_quotes
     except:
         print(f'Failed to load quotes data from the file {url}')
