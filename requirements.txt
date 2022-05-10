@@ -4,4 +4,3 @@ dnspython
 python-dotenv
 pandas
 mongoengine
-zipfile
